@@ -13,6 +13,7 @@ PostgreSQL → Airflow → S3 (Bronze/Silver/Gold) → AWS Glue → Amazon Athen
 - **Medallion Architecture**: Bronze (raw), Silver (cleaned), Gold (analytics-ready)
 - **Infrastructure as Code**: Terraform for AWS resources
 - **Containerized**: Docker Compose for local development
+- **Dev Container Ready**: VS Code dev container configuration for seamless development
 - **Business Analytics**: Pre-built SQL queries for stakeholder insights
 - **Cost Optimized**: Uses Parquet format in Gold layer for fast, cheap queries
 
@@ -20,10 +21,30 @@ PostgreSQL → Airflow → S3 (Bronze/Silver/Gold) → AWS Glue → Amazon Athen
 
 - Docker & Docker Compose
 - AWS Account with appropriate permissions
-- Terraform (optional, for infrastructure deployment)
+- Terraform for infrastructure deployment
+- VS Code with Dev Containers extension (optional)
 
 ## 🛠️ Quick Start
 
+### Option 1: Dev Container (Recommended)
+1. **Open in VS Code**
+   ```bash
+   git clone <your-repo>
+   cd airflow_postgres_to_s3_project
+   code .
+   ```
+
+2. **Reopen in Container**
+   - VS Code will prompt to "Reopen in Container"
+   - Or use Command Palette: `Dev Containers: Reopen in Container`
+
+3. **Setup Environment**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your AWS credentials and S3 bucket
+   ```
+
+### Option 2: Docker Compose
 1. **Clone and Setup**
    ```bash
    git clone <your-repo>
@@ -82,6 +103,7 @@ Pre-built SQL queries available in `/sql/athena/`:
 Key configuration files:
 - `.env` - Environment variables
 - `docker-compose.yml` - Service definitions
+- `.devcontainer/` - Dev container configuration
 - `terraform/` - AWS infrastructure
 - `dags/` - Airflow pipeline definitions
 
