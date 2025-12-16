@@ -2,13 +2,13 @@
 
 A complete end-to-end data pipeline that extracts data from PostgreSQL, processes it through Bronze/Silver/Gold layers in S3, and makes it queryable via AWS Athena.
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 PostgreSQL → Airflow → S3 (Bronze/Silver/Gold) → AWS Glue → Amazon Athena
 ```
 
-## 🚀 Features
+##  Features
 
 - **Medallion Architecture**: Bronze (raw), Silver (cleaned), Gold (analytics-ready)
 - **Infrastructure as Code**: Terraform for AWS resources
@@ -17,14 +17,14 @@ PostgreSQL → Airflow → S3 (Bronze/Silver/Gold) → AWS Glue → Amazon Athen
 - **Business Analytics**: Pre-built SQL queries for stakeholder insights
 - **Cost Optimized**: Uses Parquet format in Gold layer for fast, cheap queries
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Docker & Docker Compose
 - AWS Account with appropriate permissions
 - Terraform for infrastructure deployment
 - VS Code with Dev Containers extension (optional)
 
-## 🛠️ Quick Start
+##  Quick Start
 
 ### Option 1: Dev Container (Recommended)
 1. **Open in VS Code**
@@ -70,19 +70,19 @@ PostgreSQL → Airflow → S3 (Bronze/Silver/Gold) → AWS Glue → Amazon Athen
    terraform apply
    ```
 
-## 📊 Available DAGs
+##  Available DAGs
 
 - `restore_sales_dump` - Load sample data
 - `medallion_etl_pipeline` - Main ETL process
 - `trigger_glue_crawlers` - Catalog data in AWS Glue
 
-## 🔍 Business Analytics
+##  Business Analytics
 
 Pre-built SQL queries available in `/sql/athena/`:
 - `working_business_queries.sql` - Complete business analysis
 - `quick_insights.sql` - Fast performance insights
 
-## 🏢 Use Cases
+##  Use Cases
 
 - Sales performance analysis
 - Customer segmentation
@@ -90,7 +90,7 @@ Pre-built SQL queries available in `/sql/athena/`:
 - Geographic market analysis
 - Payment method insights
 
-## 📈 Sample Insights
+##  Sample Insights
 
 - Revenue trends and growth analysis
 - Top performing products and categories
@@ -98,7 +98,7 @@ Pre-built SQL queries available in `/sql/athena/`:
 - Geographic performance by state
 - Sales channel effectiveness
 
-## 🔧 Configuration
+##  Configuration
 
 Key configuration files:
 - `.env` - Environment variables
@@ -107,20 +107,20 @@ Key configuration files:
 - `terraform/` - AWS infrastructure
 - `dags/` - Airflow pipeline definitions
 
-## 💰 Cost Optimization
+##  Cost Optimization
 
 - Uses S3 for cost-effective storage
 - Parquet format in Gold layer reduces query costs
 - Athena pay-per-query model
 - Estimated monthly cost: <$5 for small datasets
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
 4. Submit a pull request
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.
